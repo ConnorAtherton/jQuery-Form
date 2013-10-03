@@ -13,6 +13,7 @@ var Form = function(options) {
     this.$fields = $(options.fields);
     this.$status = $(options.status);
     this.$submit = $(options.submit);
+    this.$form = options.form || 'form';
     this.rFields = {
         required: /[^.*]/,
         nodigit: /^[^0-9]+$/,
@@ -57,7 +58,7 @@ Form.prototype.process = function process(e) {
         }
     }, this));
 
-    filled && this.submit($('form').serialize());
+    filled && this.submit($(this.$form).serialize());
 
 };
 
@@ -82,7 +83,7 @@ Form.prototype.update = function update(message, isError) {
                 .fadeIn();
 
             if (isError) {
-                this.$status.removeClass('info')
+                this.$status.removeClass('shake')
                     .addClass('error');
             } 
             else {
@@ -104,9 +105,8 @@ Form.prototype.submit = function submit(data) {
         url: this.url,
         data: data,
         success: $.proxy(function(msg) {
-            console.log(msg);
             this.$fields.fadeOut();
-            this.$fields.parent()
+            this.$status
                 .empty()
                 .append('<h4 class="">Nice one Amigo! The form has been sent to the server...</h4>')
 
