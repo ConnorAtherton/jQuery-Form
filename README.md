@@ -3,7 +3,7 @@ jQuery-Form
 
 OK I know I'm reinventing the wheel with this but I thought it would be good practice to build one myself so I would better understand how other form plugins work.
 
-It works, Hurrah! However, it's very brittle and requires the form elements and corresponding error messages to manually be entered into each array in the same order, which isn't exactly ideal. Also, each input can only have one validation rule which isn't too handy for mosy applications. This plugin definitely works better in small (tiny!) projects.
+It works, Hurrah! However, it's very brittle and requires the form elements and corresponding error messages to manually be entered into each array in the same order, which isn't exactly ideal. Also, each input can only have one validation rule which isn't too handy for most applications. This plugin definitely works better in small (tiny!) projects.
 
 Here's how to create a new form..
 
